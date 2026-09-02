@@ -73,7 +73,7 @@ body {
 }
 
 
-h1 {
+h3 {
     margin: 10px 0 20px;
 
     max-width: 900px;
@@ -489,7 +489,7 @@ h1 {
 
 
 .background-photo img {
-    width: 150px;
+    width: 220px;
 
     display: block;
 
@@ -565,8 +565,8 @@ h1 {
     }
 
 
-    h1 {
-        font-size: clamp(32px, 10vw, 48px);
+    h3 {
+        font-size: clamp(26px, 10vw, 18px);
     }
 
 
@@ -622,20 +622,20 @@ h1 {
 
 
     .bg-1 {
-        top: 13%;
-        left: 10px;
+      top: 13%;
+      left: 46px;
     }
 
 
     .bg-2 {
-        top: 20%;
-        right: -20px;
+        top: 34%;
+        right: 40px;
     }
 
 
     .bg-3 {
         bottom: 5%;
-        left: -15px;
+        left: 35px;
     }
 
 }
