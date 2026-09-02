@@ -1,138 +1,689 @@
+/* =========================
+   RESET
+========================= */
+
 * {
-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-margin: 0;
-font-family: Arial, sans-serif;
-background-color: #f8dfe3;
-color: #4b2432;
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #4b2432;
+    overflow-x: hidden;
 }
+
+
+/* =========================
+   HALAMAN UTAMA
+========================= */
+
+.home-page {
+    background:
+        linear-gradient(
+            135deg,
+            #fff4f5,
+            #f5b9c3
+        );
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
-min-height: 100vh;
-padding: 30px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-text-align: center;
-background: linear-gradient(135deg, #fff4f5, #f5b9c3);
+    position: relative;
+    z-index: 2;
+
+    min-height: 100vh;
+
+    padding:
+        clamp(25px, 5vw, 60px)
+        clamp(20px, 6vw, 100px);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
 }
+
+
+/* =========================
+   TEXT
+========================= */
 
 .small-text {
-font-size: 14px;
-text-transform: uppercase;
-letter-spacing: 2px;
+    margin: 0 0 10px;
+
+    font-size: clamp(11px, 2vw, 14px);
+
+    text-transform: uppercase;
+    letter-spacing: clamp(1px, 0.5vw, 3px);
+
+    opacity: 0.8;
 }
+
 
 h1 {
-margin: 10px 0;
-font-size: 60px;
+    margin: 10px 0 20px;
+
+    max-width: 900px;
+
+    font-size: clamp(34px, 6vw, 70px);
+
+    line-height: 1.2;
+
+    text-wrap: balance;
 }
+
 
 .intro {
-max-width: 500px;
-line-height: 1.7;
-font-size: 18px;
+    max-width: 600px;
+
+    margin: 0;
+
+    font-size: clamp(16px, 2vw, 19px);
+
+    line-height: 1.8;
 }
 
-button {
-margin-top: 20px;
-padding: 14px 24px;
-border: none;
-border-radius: 30px;
-background-color: #b64f6c;
-color: white;
-font-size: 16px;
-cursor: pointer;
-}
 
-button:hover {
-background-color: #91384f;
-}
+/* =========================
+   BUTTON
+========================= */
 
-a {
-    color: inherit;
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 28px;
+
+    padding: 14px 26px;
+
+    border: none;
+    border-radius: 50px;
+
+    background-color: #b64f6c;
+
+    color: white;
     text-decoration: none;
+
+    font: inherit;
+    font-size: clamp(15px, 2vw, 17px);
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(182, 79, 108, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
+
+
+.btn:hover {
+    background-color: #91384f;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(182, 79, 108, 0.35);
+}
+
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   FOTO MENGAMBANG
+========================= */
+
+.floating-images {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+
+.floating-photo {
+    position: absolute;
+
+    width: clamp(70px, 10vw, 130px);
+
+    pointer-events: auto;
+
+    cursor: pointer;
+
+    transition:
+        left 0.45s ease,
+        top 0.45s ease;
+
+    filter:
+        drop-shadow(
+            0 10px 15px rgba(75, 36, 50, 0.18)
+        );
+}
+
+
+.floating-photo img {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 18px;
+
+    pointer-events: none;
+}
+
+
+/* Posisi awal */
+
+.photo-1 {
+    left: 8%;
+    top: 18%;
+
+    animation:
+        floatingVertical 4s ease-in-out infinite;
+}
+
+
+.photo-2 {
+    right: 10%;
+    top: 28%;
+
+    animation:
+        floatingVertical 5s ease-in-out infinite reverse;
+}
+
+
+.photo-3 {
+    left: 12%;
+    bottom: 15%;
+
+    animation:
+        floatingHorizontal 6s ease-in-out infinite;
+}
+
+
+/* =========================
+   ANIMATION FOTO
+========================= */
+
+@keyframes floatingVertical {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-3deg);
+    }
+
+    50% {
+        transform:
+            translateY(-15px)
+            rotate(3deg);
+    }
+
+}
+
+
+@keyframes floatingHorizontal {
+
+    0%,
+    100% {
+        transform:
+            translateX(0)
+            rotate(-3deg);
+    }
+
+    50% {
+        transform:
+            translateX(15px)
+            rotate(3deg);
+    }
+
+}
+
+
+/* =========================
+   HALAMAN SURAT
+========================= */
+
+.letter-page {
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8dfe36e,
+            #f5b9c36a
+        );
+
+    padding: clamp(20px, 5vw, 60px);
+}
+
 
 .letter {
-  display: block;
-  max-width: 700px;
-  margin: 60px auto;
-  padding: 50px 35px;
-  background-color: #fffaf5;
-  border-radius: 12px;
-  box-shadow: 0 15px 35px rgba(75, 36, 50, 0.2);
+    position: relative;
+
+    z-index: 2;
+
+    width: min(100%, 750px);
+
+    margin: 0 auto;
+
+    padding:
+        clamp(30px, 6vw, 60px)
+        clamp(20px, 5vw, 50px);
+
+    background:
+        rgba(255, 250, 245, 0.346);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.5);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(75, 36, 50, 0.252);
+
 }
+
 
 .letter h2 {
-  font-size: 42px;
-  margin-top: 0;
+    margin-top: 0;
+
+    font-size: clamp(32px, 5vw, 48px);
+
+    line-height: 1.2;
 }
+
 
 .letter p {
-  font-size: 17px;
-  line-height: 1.9;
+    font-size: clamp(16px, 2vw, 18px);
+
+    line-height: 1.9;
 }
+
 
 .signature {
-  margin-top: 35px;
-  font-size: 22px !important;
-  font-style: italic;
+    margin-top: 40px;
+
+    font-size: clamp(19px, 3vw, 23px) !important;
+
+    font-style: italic;
 }
+
+
+/* =========================
+   FORM
+========================= */
 
 .whatsapp-message {
-  margin-top: 45px;
-  padding-top: 30px;
-  border-top: 1px solid #efcbd2;
+    margin-top: 50px;
+
+    padding-top: 30px;
+
+    border-top:
+        1px solid #efcbd2;
 }
+
 
 .whatsapp-message h3 {
-  margin: 0 0 8px;
-  font-size: 24px;
+    margin: 0 0 8px;
+
+    font-size: clamp(23px, 4vw, 28px);
 }
+
 
 .form-help {
-  margin-top: 0;
-  font-size: 14px !important;
-  color: #754654;
+    margin-top: 0;
+
+    color: #754654;
+
+    font-size: 14px !important;
 }
 
+
 .whatsapp-message label {
-  display: block;
-  margin: 18px 0 7px;
-  font-weight: bold;
+    display: block;
+
+    margin:
+        20px 0 8px;
+
+    font-weight: bold;
 }
+
 
 .whatsapp-message input,
 .whatsapp-message textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #d99daa;
-  border-radius: 8px;
-  background: white;
-  color: #4b2432;
-  font: inherit;
+    width: 100%;
+
+    padding: 14px;
+
+    border:
+        1px solid #d99daa;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #4b2432;
+
+    font: inherit;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
+
+
+.whatsapp-message input:focus,
+.whatsapp-message textarea:focus {
+    border-color: #b64f6c;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(182, 79, 108, 0.12);
+}
+
 
 .whatsapp-message textarea {
-  resize: vertical;
+    min-height: 120px;
+
+    resize: vertical;
 }
+
+
+.whatsapp-message .btn {
+    width: 100%;
+}
+
 
 .form-error {
-  min-height: 20px;
-  margin: 10px 0 0;
-  color: #a12644;
-  font-size: 14px !important;
+    min-height: 24px;
+
+    margin: 15px 0 0;
+
+    color: #a12644;
+
+    font-size: 14px !important;
+
+    text-align: center;
 }
 
 
+.back-link {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    color: #91384f;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.back-link:hover {
+    transform: translateX(-5px);
+}
+
+
+/* =========================
+   FOTO BACKGROUND SURAT
+========================= */
+
+.background-images {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+.background-photo {
+    position: absolute;
+
+    width: clamp(80px, 13vw, 150px);
+
+    opacity: 0.65;
+
+    filter:
+        drop-shadow(
+            0 10px 20px rgba(75, 36, 50, 0.15)
+        );
+}
+
+
+.background-photo img {
+    width: 150px;
+
+    display: block;
+
+    border-radius: 20px;
+}
+
+
+.bg-1 {
+    top: 8%;
+    left: 6%;
+
+    animation:
+        floatingVertical 6s ease-in-out infinite;
+}
+
+
+.bg-2 {
+    top: 25%;
+    right: 6%;
+
+    animation:
+        floatingHorizontal 7s ease-in-out infinite;
+}
+
+
+.bg-3 {
+    bottom: 30%;
+    left: 8%;
+
+    animation:
+        floatingVertical 8s ease-in-out infinite reverse;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+    .floating-photo {
+        opacity: 0.7;
+    }
+
+    .photo-1 {
+        left: 3%;
+        top: 10%;
+    }
+
+    .photo-2 {
+        right: 3%;
+        top: 20%;
+    }
+
+    .photo-3 {
+        left: 5%;
+        bottom: 8%;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 600px) {
-  .hero { padding: 20px; }
-  h1 { font-size: 38px; }
-  .intro, .letter p { font-size: 16px; }
-  .letter { margin: 25px 15px; padding: 30px 22px; }
-  .letter h2 { font-size: 32px; }
+
+    .hero {
+        justify-content: center;
+
+        min-height: 100svh;
+    }
+
+
+    h1 {
+        font-size: clamp(32px, 10vw, 48px);
+    }
+
+
+    .intro {
+        max-width: 330px;
+
+        line-height: 1.7;
+    }
+
+
+    .floating-photo {
+        width: clamp(55px, 20vw, 85px);
+
+        opacity: 0.55;
+    }
+
+
+    /* Supaya foto tidak menutupi teks */
+
+    .photo-1 {
+        left: 4%;
+        top: 8%;
+    }
+
+
+    .photo-2 {
+        right: 3%;
+        top: 14%;
+    }
+
+
+    .photo-3 {
+        left: 3%;
+        bottom: 10%;
+    }
+
+
+    .letter-page {
+        padding: 15px;
+    }
+
+
+    .letter {
+        border-radius: 16px;
+    }
+
+
+    .background-photo {
+        width: 80px;
+
+        opacity: 0.4;
+    }
+
+
+    .bg-1 {
+        top: 13%;
+        left: 10px;
+    }
+
+
+    .bg-2 {
+        top: 20%;
+        right: -20px;
+    }
+
+
+    .bg-3 {
+        bottom: 5%;
+        left: -15px;
+    }
+
+}
+
+
+/* =========================
+   HP SANGAT KECIL
+========================= */
+
+@media (max-width: 380px) {
+
+    .floating-photo {
+        width: 55px;
+
+        opacity: 0.45;
+    }
+
+
+    .small-text {
+        letter-spacing: 1px;
+    }
+
+
+    .btn {
+        width: 100%;
+
+        max-width: 280px;
+    }
+
+}
+
+
+/* =========================
+   AKSESIBILITAS
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
 }
