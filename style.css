@@ -26,7 +26,7 @@ text-transform: uppercase;
 letter-spacing: 2px;
 }
 
-h3 {
+h1 {
 margin: 10px 0;
 font-size: 60px;
 }
@@ -128,28 +128,11 @@ a {
   font-size: 14px !important;
 }
 
-@media (max-width: 800px) {
-  .hero {
-    padding: 20px;
-  }
 
-  .intro {
-    font-size: 16px;
-  }
-  h3 {
-    font-size: 20px;
-  }
-    
-  .letter {
-    margin: 25px 15px;
-    padding: 30px 22px;
-  }
-
-  .letter h2 {
-    font-size: 32px;
-  }
-
-  .letter p {
-    font-size: 16px;
-  }
+@media (max-width: 600px) {
+  .hero { padding: 20px; }
+  h1 { font-size: 38px; }
+  .intro, .letter p { font-size: 16px; }
+  .letter { margin: 25px 15px; padding: 30px 22px; }
+  .letter h2 { font-size: 32px; }
 }
