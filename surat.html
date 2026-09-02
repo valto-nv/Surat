@@ -1,15 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#f5b9c3">
+
     <link rel="stylesheet" href="style.css">
-    <title>For My Prilli🤍</title>
+
+    <title>For My Prilli 🤍</title>
 </head>
-<body>
-    
-    <div class="letter">
-        <h2>Untuk kamu,</h2>
+
+<body class="letter-page">
+
+    <!-- Foto dekorasi -->
+    <div class="background-images" aria-hidden="true">
+
+        <div class="background-photo bg-1">
+            <img src="image/liaslide4.png" alt="">
+        </div>
+
+        <div class="background-photo bg-2">
+            <img src="image/liaputih.png" alt="">
+        </div>
+
+        <div class="background-photo bg-3">
+            <img src="image/liaslide2.png" alt="">
+        </div>
+
+    </div>
+
+    <main class="letter">
+
+        <h2>Untuk kamu, ❤️</h2>
 
         <p>
             Terima kasih karena sudah hadir dalam hidupku.
@@ -31,35 +56,49 @@
             Nouval ❤️
         </p>
 
-        <section class="whatsapp-message" aria-labelledby="pesan-title">
+
+        <section class="whatsapp-message">
+
             <h3>Kirim suratmu 💌</h3>
+
             <p class="form-help">
                 Tulis pesanmu, lalu kirim langsung ke Telegram.
             </p>
 
             <form id="messageForm">
-                <label for="namaPengirim">Namamu</label>
-                <input
-                id="namaPengirim"
-                type="text"
-                placeholder="Nama kamu"
-                required
-                >
 
-                <label for="isiPesan">Pesanmu</label>
-                <textarea
-                id="isiPesan"
-                rows="5"
-                placeholder="Tulis pesan manismu di sini..."
-                required
-                ></textarea>
+                <label for="namaPengirim">
+                    Namamu
+                </label>
 
-                <button type="submit">Kirim ke Telegram 💌</button>
+                <input id="namaPengirim" type="text" placeholder="Nama kamu" required>
+
+
+                <label for="isiPesan">
+                    Pesanmu
+                </label>
+
+                <textarea id="isiPesan" rows="5" placeholder="Tulis pesan manismu di sini..." required ></textarea>
+
+
+                <button type="submit" class="btn">
+                    Kirim 💌
+                </button>
 
                 <p id="formError" class="form-error"></p>
+
             </form>
+
         </section>
-        <script src="script.js"></script>
-    </div>
+
+        <a href="index.html" class="back-link">
+            ← Kembali
+        </a>
+
+    </main>
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
