@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <title>For My Prilli🤍</title>
 </head>
@@ -33,23 +32,34 @@
         </p>
 
         <section class="whatsapp-message" aria-labelledby="pesan-title">
-            <h3 id="pesan-title">Kirim pesan untukku 💌</h3>
+            <h3>Kirim suratmu 💌</h3>
+            <p class="form-help">
+                Tulis pesanmu, lalu kirim langsung ke Telegram.
+            </p>
 
-            <form id="whatsappForm">
+            <form id="messageForm">
+                <label for="namaPengirim">Namamu</label>
+                <input
+                id="namaPengirim"
+                type="text"
+                placeholder="Nama kamu"
+                required
+                >
 
                 <label for="isiPesan">Pesanmu</label>
                 <textarea
-                    id="isiPesan"
-                    name="isiPesan"
-                    rows="5"
-                    placeholder="Tulis pesan manismu di sini..."
-                    required
+                id="isiPesan"
+                rows="5"
+                placeholder="Tulis pesan manismu di sini..."
+                required
                 ></textarea>
 
-                <button type="submit">Kirim lewat WhatsApp 💚</button>
-                <p id="formError" class="form-error" role="alert"></p>
+                <button type="submit">Kirim ke Telegram 💌</button>
+
+                <p id="formError" class="form-error"></p>
             </form>
         </section>
+        <script src="script.js"></script>
     </div>
 </body>
 </html>
